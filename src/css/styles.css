@@ -123,11 +123,16 @@ body {
 }
 
 .loader {
+  display: none;
   margin: 0 auto;
   text-align: center;
   font-size: 16px;
   line-height: 1.5;
   color: #2e2f42;
+}
+
+.loader.is-visible {
+  display: block;
 }
 
 .is-hidden {
