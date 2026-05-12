@@ -95,15 +95,19 @@ async function onLoadMoreClick() {
     smoothScroll();
 
     if (currentPage * PER_PAGE >= data.totalHits) {
+      hideLoadMoreButton();
+
       iziToast.info({
         title: 'Info',
         message:
           "We're sorry, but you've reached the end of search results.",
         position: 'topRight',
       });
-    } else {
-      showLoadMoreButton();
+
+      return;
     }
+
+    showLoadMoreButton();
   } catch (error) {
     iziToast.error({
       title: 'Error',
